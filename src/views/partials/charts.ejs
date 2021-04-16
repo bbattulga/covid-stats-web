@@ -1,0 +1,65 @@
+<div class="charts">
+  <div class="mb-5">
+    <h4>Cases</h4>
+    <canvas id="cases-chart"></canvas>
+  </div>
+  <div class="mb-5">
+    <h4>Recovery Rate</h4>
+    <canvas id="recovery-chart"></canvas>
+  </div>
+  <div class="mb-5">
+    <h4>Death Rate</h4>
+    <canvas id="death-chart"></canvas>
+  </div>
+</div>
+
+<script>
+  function getRandNums(n) {
+    let nums = [];
+    for (let i = 0; i < n; i++) {
+      nums.push(Math.abs(10000 * Math.random()));
+    }
+    return nums;
+  }
+  function range(i, j) {
+    let nums = [];
+    for (let k = i; k < j; k++) {
+      nums.push(k);
+    }
+    return nums;
+  }
+  let N = 14;
+
+  let labels = range(1, N).map((r) => r.toString());
+  let data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Affected",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: getRandNums(N),
+        lineTension: 0,
+      },
+    ],
+  };
+  let config = {
+    type: "line",
+    data,
+    options: {
+      legend: {
+        display: false,
+      },
+      tooltips: {
+        callbacks: {
+          label: function (tooltipItem) {
+            return tooltipItem.yLabel;
+          },
+        },
+      },
+    },
+  };
+  var casesChart = new Chart(document.getElementById("cases-chart"), config);
+  var casesChart = new Chart(document.getElementById("recovery-chart"), config);
+  var casesChart = new Chart(document.getElementById("death-chart"), config);
+</script>
