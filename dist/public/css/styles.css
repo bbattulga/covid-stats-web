@@ -1,33 +1,141 @@
+/* =====
+  Globals
+======= */
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+
+  --light-grey: #767c8f;
+  --white: #cdd7fb;
+  --green: #2bc37f;
+  --red: #cd0102;
+  --yellow: #dfd000;
+  --purple: #9a2ff8;
+  --pink: #ff4d84;
+  --blue: #315eeb;
+  --orange: #fe7805;
+  --grey: #212532;
+  --black: #010100;
+  --background: #0e0f15;
+  --canvas: #181d27;
+}
+
+.count-total {
+  color: var(--orange);
+}
+
+.count-recovered {
+  color: var(--blue);
+}
+
+.count-deaths {
+  color: var(--pink);
+}
+
+.count-active {
+  color: var(--purple);
+}
+
+.count-new {
+  color: var(--yellow);
+}
+
+.count-country {
+  color: var(--white);
+}
+
 body {
-  padding: 100px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--canvas);
+  color: var(--light-grey);
 }
 
-body .users-column {
-  display: inline-block;
-  margin-right: 2em;
-  vertical-align: top;
+/* ======
+  Custom components
+===== */
+
+.header {
 }
 
-body .users-column .column-header {
-  padding-bottom: 5px;
-  font-weight: 700;
-  font-size: 1.2em;
+.header-title {
+  color: var(--light-grey);
+}
+/* actions */
+.actions {
 }
 
-body .add-user-col input {
-  margin-bottom: 10px;
+.form-select {
+  background-color: var(--grey);
+  border: none;
+  color: var(--white);
 }
 
-body .users-column .user-display-ele {
-  padding-bottom: 10px;
+/* countries */
+.countries {
 }
 
-body .users-column .user-display-ele button {
-  margin-top: 2px;
-  margin-bottom: 10px;
+.countries .list-group .list-group-item {
+  background-color: transparent;
 }
 
-body .users-column .user-display-ele .edit-view {
-  display: none;
+.countries .list-group-item {
+  border: none;
+  border-bottom: 0.01rem;
+  border-bottom-style: solid;
+  border-bottom-color: var(--grey);
+  background-color: var(--background) !important;
+}
+
+.country-list__count,
+.country-list__name {
+  color: var(--orange);
+}
+.country-list__chart {
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--blue);
+}
+
+/* =====
+  override bootstrap
+====== */
+.card {
+  background-color: var(--background);
+}
+
+.stats-cards .card {
+  margin-bottom: 1rem;
+  flex-shrink: 1;
+}
+.stats-cards .card-title {
+  margin-bottom: 0.4rem;
 }

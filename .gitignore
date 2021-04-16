@@ -29,3 +29,5 @@ benchmarks/graphs
 
 # env
 .env
+
+dist
